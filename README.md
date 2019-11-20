@@ -8,11 +8,17 @@ What are it's dependencies?
 --------------------------
 
 The website directly relies on:
-* [Python 3.7.4](https://www.python.org/downloads/release/python-374/)
-* [Flask](https://pypi.org/project/Flask/)
+* [Python 3.7](https://www.python.org/downloads/release/python-370/)
 * [HTML 5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [Database](https://en.wikipedia.org/wiki/Database)
 
+Flask related dependencies:
+* [Flask 1.1.1](https://pypi.org/project/Flask/#files)
+* [Flask Bcrypt](https://github.com/maxcountryman/flask-bcrypt)
+* [Flask Login](https://github.com/maxcountryman/flask-login)
+* [Flask SQLAlchemy](https://github.com/pallets/flask-sqlalchemy)
+* [Flask WTForms](https://github.com/lepture/flask-wtf)
 
 Where do I report bugs?
 -----------------------
