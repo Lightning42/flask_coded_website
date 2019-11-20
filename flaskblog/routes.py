@@ -52,7 +52,7 @@ def about():
 
 @app.route("/test")
 def test():
-    return render_template('test.html')
+    return render_template('dropdown.html')
 
 
 @app.route("/register", methods=['GET', 'POST'])
