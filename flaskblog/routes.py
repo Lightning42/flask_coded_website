@@ -50,11 +50,6 @@ def about():
     return render_template('about.html', title='About')
 
 
-@app.route("/test")
-def test():
-    return render_template('dropdown.html')
-
-
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
