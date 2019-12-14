@@ -1,3 +1,7 @@
+.header{
+    margin-bottom: 20px;
+}
+
 body {
   background: #fafafa;
   color: #333333;
@@ -26,10 +30,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-section {
   background: #ffffff;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+}
+
+.rounded-circle {
+    width: 75px;
+    height: 75px;
+}
+
+.media-body {
+  margin-left: 10px;
 }
 
 .article-title {
