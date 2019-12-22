@@ -163,6 +163,7 @@ def send_reset_email(user):
 
 If you did not make this request, simply ignore this email and no changes will be made
 '''
+    mail.send(msg)
 
 
 @app.route("/reset_password", methods=['GET', 'POST'])
@@ -173,7 +174,7 @@ def reset_request():
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data). first()
         send_reset_email(user)
-        flask('An email has been sent with instructions to reset your password.', 'info')
+        flash('An email has been sent with instructions to reset your password.', 'info')
         return redirect(url_for('login'))
     return render_template('reset_request.html', title='Reset Password', form=form)
 
@@ -187,4 +188,10 @@ def reset_token(token):
         flash('That is an invalid or expired token', 'warning')
         return redirect(url_for('reset_request'))
     form = ResetPasswordForm()
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user.password = hashed_password
+        db.session.commit()
+        flash('Your password has been updated! You are now able to log in', 'success')
+        return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
